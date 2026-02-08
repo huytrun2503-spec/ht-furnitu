@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>HTWOOD | Nội Thất Gỗ Cao Cấp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">HT<span>WOOD</span></div>
+    <nav class="nav-menu">
+        <a href="#home">Trang chủ</a>
+        <div class="dropdown">
+            <a href="#products">Sản phẩm <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+            <div class="dropdown-content">
+                <a href="javascript:void(0)" onclick="filterProducts('all')">Tất cả</a>
+                <a href="javascript:void(0)" onclick="filterProducts('ban')">Bàn Gỗ</a>
+                <a href="javascript:void(0)" onclick="filterProducts('ghe')">Ghế Decor</a>
+                <a href="javascript:void(0)" onclick="filterProducts('ke')">Kệ Tủ</a>
+            </div>
+        </div>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+    </nav>
+    <div class="header-icons">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Tìm sản phẩm..." onkeyup="searchProduct()">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+</header>
+
+<section id="home" class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('photo6.jpg');">
+    <div class="hero-text">
+        <h1>Tinh Hoa Gỗ Tự Nhiên</h1>
+        <p>Thiết kế độc bản – Nâng tầm không gian sống thượng lưu.</p>
+        <button class="btn-primary" onclick="scrollToSection('products')">KHÁM PHÁ NGAY</button>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <div class="about-img">
+        <img src="photo.jpg" alt="Về HTWOOD">
+    </div>
+    <div class="about-content">
+        <span class="sub-title">Về Chúng Tôi</span>
+        <h2>HTWOOD - Nghệ Thuật Gỗ Việt</h2>
+        <p>HTWOOD tự hào là đơn vị tiên phong trong việc chế tác nội thất gỗ tự nhiên cao cấp, kết hợp giữa kỹ thuật thủ công truyền thống và xu hướng kiến trúc hiện đại.</p>
+        <ul class="benefit-list">
+            <li><i class="fa fa-check-circle"></i> Nguyên liệu gỗ quý nhập khẩu</li>
+            <li><i class="fa fa-check-circle"></i> Nghệ nhân hơn 20 năm kinh nghiệm</li>
+            <li><i class="fa fa-check-circle"></i> Bảo hành sản phẩm lên đến 10 năm</li>
+        </ul>
+    </div>
+</section>
+
+<section id="products" class="products">
+    <div class="section-header">
+        <h2>Bộ Sưu Tập Nổi Bật</h2>
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="filterProducts('all')">Tất cả</button>
+            <button class="tab-btn" onclick="filterProducts('ban')">Bàn</button>
+            <button class="tab-btn" onclick="filterProducts('ghe')">Ghế</button>
+            <button class="tab-btn" onclick="filterProducts('ke')">Kệ Tủ</button>
+        </div>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="contact-card">
+        <h2>Tư vấn Thiết kế & Đặt hàng</h2>
+        <p>Liên hệ ngay để nhận báo giá chi tiết và ưu đãi đặc biệt trong tháng này.</p>
+        <div class="contact-btns">
+            <a href="https://zalo.me/0989857394" target="_blank" class="btn-zalo"><i class="fab fa-whatsapp"></i> Chat Zalo: 0989.857.394</a>
+            <a href="tel:0989857394" class="btn-phone"><i class="fa fa-phone"></i> Gọi ngay</a>
+        </div>
+    </div>
+</section>
+
+<div id="cart-modal" class="modal">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3>Giỏ hàng của bạn</h3>
+            <span onclick="toggleCart()" class="close">&times;</span>
+        </div>
+        <div id="cart-items" class="cart-body"></div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Tổng cộng:</span>
+                <span id="cart-total" class="total-price">0đ</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">ĐẶT HÀNG QUA ZALO</button>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="copy">© 2026 HTWOOD – Sang Trọng & Đẳng Cấp</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
